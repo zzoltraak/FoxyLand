@@ -104,10 +104,10 @@
             <div id="mobileMenu"
      class="fixed inset-0 z-50 hidden md:hidden">
 
-  <!-- overlay -->
+  <!-- Overlay -->
   <div class="absolute inset-0 bg-black/40"></div>
 
-  <!-- panel -->
+  <!-- Panel -->
   <div class="absolute top-6 right-6 left-6 bg-white rounded-[2rem] p-6 shadow-2xl">
     <div class="flex justify-between items-center mb-4">
       <span class="font-bold text-stone-700 text-lg">Menu</span>
@@ -363,7 +363,7 @@
       </div>
 
       <!-- Pay -->
-      <a href="https://buy.stripe.com/test_dRmeVe92xcQqaGUd9z0kE00"
+      <a href="https://buy.stripe.com/test_eVqbJ2ceJdUu16k8Tj0kE01"
    target="_blank"
    rel="noopener noreferrer"
    class="block w-full mt-4 py-3 rounded-full font-bold text-center text-white bg-gradient-to-br from-rose-400 to-orange-300 hover:scale-105 transition-all">
@@ -392,7 +392,7 @@
         <div class="sticky bg-white border-stone-200/60 border rounded-3xl pt-4 pr-4 pb-4 pl-4 top-28 shadow-sm">
           <h3 class="uppercase text-sm font-bold text-stone-400 tracking-wider mb-4 pr-2 pl-2">Categories</h3>
 
-          <!-- Category buttons (now: pill, pastel, active pink, hover glow) -->
+          <!-- Category buttons -->
           <nav class="space-y-2" aria-label="Shop categories">
   <button data-shop-category="featured" class="shop-cat-btn flex transition-all text-sm text-left w-full rounded-full pt-2.5 pr-4 pb-2.5 pl-4 items-center justify-between bg-rose-100 text-rose-600 font-bold shadow-[0_10px_30px_-18px_rgba(244,63,94,0.55)] hover:shadow-[0_14px_34px_-18px_rgba(244,63,94,0.45)]">
                                 <span class="">Featured</span>
@@ -688,7 +688,7 @@
               </div>
             </div>
           </div>
-          <!-- Featured -->
+          <!-- Featured 1 -->
           <div class="shop-item rounded-3xl p-3 pb-4 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group border bg-white border-stone-100" data-category="featured">
             <div class="aspect-square flex overflow-hidden bg-orange-50 rounded-2xl mb-3 relative items-center justify-center">
               <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/684aaa59-770c-46cb-9507-c8d937059dfd_800w.png" class="group-hover:scale-110 transition-transform mix-blend-multiply w-3/4 h-3/4 object-contain" alt="Autumn Stickers">
@@ -709,7 +709,7 @@
             </div>
           </div>
 
-          <!-- Featured -->
+          <!-- Featured 2 -->
           <div class="shop-item rounded-3xl p-3 pb-4 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group border bg-white border-stone-100" data-category="featured">
             <div class="rounded-2xl aspect-square flex items-center justify-center mb-3 relative overflow-hidden bg-purple-50">
               <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/741548bf-1ba5-4cf5-8eb8-ef5690ee3d99_800w.png" class="group-hover:scale-110 transition-transform mix-blend-multiply w-3/4 h-3/4 object-contain" alt="Classic Stickers">
@@ -946,7 +946,7 @@
 
       setCount(count + 1);
 
-      // визуально показать "добавлено" 
+      // Visually show "added"
       btn.classList.add('ring-2', 'ring-rose-300');
       window.setTimeout(function () {
         btn.classList.remove('ring-2', 'ring-rose-300');
@@ -985,7 +985,7 @@
 
   if (!countEl || !itemsEl) return;
 
-  var cart = []; // [{ name: string }]
+  var cart = []; 
 
   function render() {
     countEl.textContent = cart.length;
@@ -1005,7 +1005,7 @@
   }
 
   document.addEventListener('click', function (e) {
-    // ADD
+    // Add
     var addBtn = e.target.closest('[data-add-to-cart]');
     if (addBtn) {
       var name = addBtn.getAttribute('data-product') || 'Item';
@@ -1014,7 +1014,7 @@
       return;
     }
 
-    // REMOVE
+    // Remove
     var removeBtn = e.target.closest('[data-remove]');
     if (removeBtn) {
       var index = parseInt(removeBtn.getAttribute('data-remove'), 10);
@@ -1025,7 +1025,7 @@
     }
   });
 
-  // OPTIONAL: очистка корзины после успешной оплаты
+  // Emptying the cart after successful payment
   var form = document.getElementById('checkoutForm');
   if (form) {
     form.addEventListener('submit', function () {
@@ -1044,19 +1044,19 @@
 
   if (!countEl || !totalEl || !listEl) return;
 
-  var cart = []; // { name, price }
+  var cart = []; 
 
   function render() {
-    // count
+    // Count
     countEl.textContent = cart.length;
 
-    // total
+    // Total
     var total = cart.reduce(function (s, i) {
       return s + i.price;
     }, 0);
     totalEl.textContent = '$' + total.toFixed(2);
 
-    // list
+    // List
     listEl.innerHTML = '';
     cart.forEach(function (item, idx) {
       var li = document.createElement('li');
@@ -1072,7 +1072,7 @@
   }
 
   document.addEventListener('click', function (e) {
-    // ADD
+    // Add
     var addBtn = e.target.closest('[data-add-to-cart]');
     if (addBtn) {
       var name  = addBtn.getAttribute('data-product') || 'Item';
@@ -1085,7 +1085,7 @@
       return;
     }
 
-    // REMOVE
+    // Remove
     var removeBtn = e.target.closest('[data-remove]');
     if (removeBtn) {
       var index = parseInt(removeBtn.getAttribute('data-remove'), 10);
@@ -1118,5 +1118,4 @@
   });
 })();
   </script>
-
 </body></html>
